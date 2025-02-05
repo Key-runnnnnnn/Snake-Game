@@ -31,6 +31,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function drawFoodAndSnake() {
     gameArena.innerHTML = "";//clear the game arena
+
+    snake.forEach((snakeCell) => {
+      const snakeElement = drawDiv(snakeCell.x, snakeCell.y, "snake");
+      gameArena.appendChild(snakeElement);
+    })
+
+
     const foodElement = drawDiv(food.x, food.y, "food");
     gameArena.appendChild(foodElement);
   }
